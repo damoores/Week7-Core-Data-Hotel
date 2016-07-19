@@ -68,20 +68,21 @@
                 newHotel.name = hotel[@"name"];
                 newHotel.location = hotel[@"location"];
                 newHotel.stars = hotel[@"stars"];
-                
                 rooms = hotel[@"rooms"];
-                NSMutableSet *rooms = [[NSMutableSet alloc]init];
+                NSMutableSet *hotelRooms = [[NSMutableSet alloc]init];
                 
                 for (NSDictionary *room in rooms) {
-                    Rooms *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+                    Rooms *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Rooms" inManagedObjectContext:self.managedObjectContext];
                     
                     newRoom.number = room[@"number"];
                     newRoom.beds = room[@"beds"];
                     newRoom.rate = room[@"rate"];
                     newRoom.hotel = newHotel;
-
+                    
+                    [hotelRooms addObject:newRoom];
                 }
-                newHotel.rooms = rooms;
+                
+                newHotel.rooms = hotelRooms;
             }
             NSError *saveError;
             BOOL isSaved = [self.managedObjectContext save:&saveError];

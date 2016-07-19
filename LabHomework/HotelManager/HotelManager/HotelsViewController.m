@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTableView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +73,7 @@
     leading.active = YES;
     top.active = YES;
     bottom.active = YES;
+    
 }
 
 #pragma mark -- UITableViewDatasource
