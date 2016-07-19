@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 #import "Hotel.h"
 #import "Rooms.h"
 #import "Guest.h"
@@ -15,7 +16,7 @@
 @interface AppDelegate ()
 
 @property (strong, nonatomic) UINavigationController *navigationController;
-@property (strong, nonatomic) UIViewController *viewController;
+@property (strong, nonatomic) ViewController *viewController;
 
 @end
 
@@ -36,7 +37,7 @@
 - (void)setupRootViewController
 {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.viewController = [[UIViewController alloc]init];
+    self.viewController = [[ViewController alloc]init];
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
@@ -46,7 +47,7 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
     NSError *error;
-    NSInteger *count = [self.managedObjectContext countForFetchRequest:request error:&error];
+    NSInteger count = [self.managedObjectContext countForFetchRequest:request error:&error];
     
     if (count == 0) {
         NSDictionary *hotels = [[NSDictionary alloc]init];
