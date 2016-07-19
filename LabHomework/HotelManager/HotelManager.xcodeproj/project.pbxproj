@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		705227A81D3ECBA60002B79A /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227A71D3ECBA60002B79A /* DateViewController.m */; };
+		705227AB1D3ED3480002B79A /* AvailabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227AA1D3ED3480002B79A /* AvailabilityViewController.m */; };
+		705227AE1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227AD1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m */; };
+		705227C51D3EE8BF0002B79A /* Guest+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227C21D3EE8BF0002B79A /* Guest+CoreDataProperties.m */; };
+		705227C61D3EE8BF0002B79A /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227C41D3EE8BF0002B79A /* Guest.m */; };
 		7098FE311D3D9AA7008AFD82 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2E1D3D9AA7008AFD82 /* hotel.png */; };
 		7098FE321D3D9AA7008AFD82 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2F1D3D9AA7008AFD82 /* hotels.json */; };
 		7098FE331D3D9AA7008AFD82 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE301D3D9AA7008AFD82 /* room.png */; };
 		7098FE361D3D9B86008AFD82 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE351D3D9B86008AFD82 /* HotelsViewController.m */; };
 		7098FE391D3D9B93008AFD82 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE381D3D9B93008AFD82 /* RoomsViewController.m */; };
-		7098FE4E1D3DD6AE008AFD82 /* Guest+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE3F1D3DD6AE008AFD82 /* Guest+CoreDataProperties.m */; };
-		7098FE4F1D3DD6AE008AFD82 /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE411D3DD6AE008AFD82 /* Guest.m */; };
 		7098FE501D3DD6AE008AFD82 /* Hotel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE431D3DD6AE008AFD82 /* Hotel+CoreDataProperties.m */; };
 		7098FE511D3DD6AE008AFD82 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE451D3DD6AE008AFD82 /* Hotel.m */; };
 		7098FE521D3DD6AE008AFD82 /* Reservation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7098FE471D3DD6AE008AFD82 /* Reservation+CoreDataProperties.m */; };
@@ -29,6 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		705227A61D3ECBA60002B79A /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
+		705227A71D3ECBA60002B79A /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
+		705227A91D3ED3480002B79A /* AvailabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityViewController.h; sourceTree = "<group>"; };
+		705227AA1D3ED3480002B79A /* AvailabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityViewController.m; sourceTree = "<group>"; };
+		705227AC1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+NSManagedObjectContext.h"; sourceTree = "<group>"; };
+		705227AD1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+NSManagedObjectContext.m"; sourceTree = "<group>"; };
+		705227C11D3EE8BF0002B79A /* Guest+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Guest+CoreDataProperties.h"; sourceTree = "<group>"; };
+		705227C21D3EE8BF0002B79A /* Guest+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Guest+CoreDataProperties.m"; sourceTree = "<group>"; };
+		705227C31D3EE8BF0002B79A /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
+		705227C41D3EE8BF0002B79A /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
 		7098FE2E1D3D9AA7008AFD82 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotel.png"; sourceTree = "<group>"; };
 		7098FE2F1D3D9AA7008AFD82 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotels.json"; sourceTree = "<group>"; };
 		7098FE301D3D9AA7008AFD82 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/room.png"; sourceTree = "<group>"; };
@@ -36,10 +49,6 @@
 		7098FE351D3D9B86008AFD82 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsViewController.m; sourceTree = "<group>"; };
 		7098FE371D3D9B93008AFD82 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		7098FE381D3D9B93008AFD82 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
-		7098FE3E1D3DD6AE008AFD82 /* Guest+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Guest+CoreDataProperties.h"; sourceTree = "<group>"; };
-		7098FE3F1D3DD6AE008AFD82 /* Guest+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Guest+CoreDataProperties.m"; sourceTree = "<group>"; };
-		7098FE401D3DD6AE008AFD82 /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
-		7098FE411D3DD6AE008AFD82 /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
 		7098FE421D3DD6AE008AFD82 /* Hotel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hotel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		7098FE431D3DD6AE008AFD82 /* Hotel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hotel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7098FE441D3DD6AE008AFD82 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
@@ -78,6 +87,8 @@
 		7098FE3A1D3D9DAE008AFD82 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				705227AC1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.h */,
+				705227AD1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -85,6 +96,10 @@
 		70B9D59B1D3D831C00D7EB79 = {
 			isa = PBXGroup;
 			children = (
+				705227C11D3EE8BF0002B79A /* Guest+CoreDataProperties.h */,
+				705227C21D3EE8BF0002B79A /* Guest+CoreDataProperties.m */,
+				705227C31D3EE8BF0002B79A /* Guest.h */,
+				705227C41D3EE8BF0002B79A /* Guest.m */,
 				70B9D5A61D3D831C00D7EB79 /* HotelManager */,
 				70B9D5A51D3D831C00D7EB79 /* Products */,
 			);
@@ -141,6 +156,10 @@
 				7098FE351D3D9B86008AFD82 /* HotelsViewController.m */,
 				7098FE371D3D9B93008AFD82 /* RoomsViewController.h */,
 				7098FE381D3D9B93008AFD82 /* RoomsViewController.m */,
+				705227A61D3ECBA60002B79A /* DateViewController.h */,
+				705227A71D3ECBA60002B79A /* DateViewController.m */,
+				705227A91D3ED3480002B79A /* AvailabilityViewController.h */,
+				705227AA1D3ED3480002B79A /* AvailabilityViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,10 +184,6 @@
 		70B9D5C51D3D83DA00D7EB79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7098FE3E1D3DD6AE008AFD82 /* Guest+CoreDataProperties.h */,
-				7098FE3F1D3DD6AE008AFD82 /* Guest+CoreDataProperties.m */,
-				7098FE401D3DD6AE008AFD82 /* Guest.h */,
-				7098FE411D3DD6AE008AFD82 /* Guest.m */,
 				7098FE421D3DD6AE008AFD82 /* Hotel+CoreDataProperties.h */,
 				7098FE431D3DD6AE008AFD82 /* Hotel+CoreDataProperties.m */,
 				7098FE441D3DD6AE008AFD82 /* Hotel.h */,
@@ -259,12 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7098FE361D3D9B86008AFD82 /* HotelsViewController.m in Sources */,
-				7098FE4E1D3DD6AE008AFD82 /* Guest+CoreDataProperties.m in Sources */,
-				7098FE4F1D3DD6AE008AFD82 /* Guest.m in Sources */,
+				705227AB1D3ED3480002B79A /* AvailabilityViewController.m in Sources */,
 				7098FE541D3DD6AE008AFD82 /* Rooms+CoreDataProperties.m in Sources */,
 				70B9D5B51D3D831C00D7EB79 /* HotelManager.xcdatamodeld in Sources */,
 				70B9D5AF1D3D831C00D7EB79 /* ViewController.m in Sources */,
 				70B9D5AC1D3D831C00D7EB79 /* AppDelegate.m in Sources */,
+				705227C61D3EE8BF0002B79A /* Guest.m in Sources */,
+				705227AE1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m in Sources */,
+				705227A81D3ECBA60002B79A /* DateViewController.m in Sources */,
+				705227C51D3EE8BF0002B79A /* Guest+CoreDataProperties.m in Sources */,
 				7098FE531D3DD6AE008AFD82 /* Reservation.m in Sources */,
 				7098FE521D3DD6AE008AFD82 /* Reservation+CoreDataProperties.m in Sources */,
 				7098FE501D3DD6AE008AFD82 /* Hotel+CoreDataProperties.m in Sources */,

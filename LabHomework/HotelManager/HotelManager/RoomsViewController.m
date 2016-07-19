@@ -81,7 +81,9 @@
     
     Rooms *room = self.datasource[indexPath.row];
     NSString *roomNumber = [room.number stringValue];
-    cell.textLabel.text = roomNumber;
+    NSString *roomBeds = [room.beds stringValue];
+    NSString *roomRate = [room.rate stringValue];
+    cell.textLabel.text = [NSString stringWithFormat:@"Room %@: %@ Beds, $%@ per night", roomNumber, roomBeds, roomRate];
     return cell;
 }
 
