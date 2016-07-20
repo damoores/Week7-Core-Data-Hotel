@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "HotelsViewController.h"
 #import "DateViewController.h"
+#import "ComingSoonViewController.h"
+#import "InfoViewController.h"
 
 @interface ViewController ()
 
@@ -37,6 +39,7 @@
 - (void)setupViewController
 {
     [self.navigationItem setTitle:@"H & M Properties"];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@" ⚒ " style:UIBarButtonItemStylePlain target:self action:@selector(infoButtonSelected:)]];
 }
 
 - (void)setupCustomLayout
@@ -128,7 +131,12 @@
 
 - (void)lookUpButtonSelected:(UIButton *)sender
 {
-    //TODO: add action
+    [self.navigationController pushViewController:[[ComingSoonViewController alloc]init] animated:YES];
+}
+
+- (void)infoButtonSelected:(UIBarButtonItem *)sender
+{
+    [self.navigationController pushViewController:[[InfoViewController alloc]init] animated:YES];
 }
 
 @end
