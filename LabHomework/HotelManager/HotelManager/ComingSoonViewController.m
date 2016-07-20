@@ -25,7 +25,7 @@
 - (void)loadView
 {
     [super loadView];
-    UIImage *backgroundImage = [UIImage imageNamed:@"coming-soon"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"Coming-soon"];
     UIImageView *imageView = [[UIImageView alloc]initWithImage:backgroundImage];
     
     imageView.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
