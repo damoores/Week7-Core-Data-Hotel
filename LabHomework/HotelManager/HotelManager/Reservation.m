@@ -7,11 +7,22 @@
 //
 
 #import "Reservation.h"
+#import "AppDelegate.h"
 #import "Guest.h"
 #import "Rooms.h"
+#import "NSManagedObject+NSManagedObjectContext.h"
 
 @implementation Reservation
 
-// Insert code here to add functionality to your managed object subclass
++ (instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Rooms *)room
+{
+    Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:[NSManagedObject managerContext]];
+    
+    reservation.startDate = startDate;
+    reservation.endDate = endDate;
+    reservation.rooms = room;
+    
+    return reservation;
+}
 
 @end
