@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
+#import "NSManagedObject+NSManagedObjectContext.h"
+
 
 @class Reservation;
 
@@ -16,7 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Guest : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+// + (instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Rooms *)room
+
++ (instancetype)guestWithName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email;
 
 @end
 

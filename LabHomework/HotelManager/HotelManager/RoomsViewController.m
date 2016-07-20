@@ -50,6 +50,8 @@
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"roomCell"];
+    self.tableView.backgroundColor = [UIColor greenColor];
+
     
     //setup TableView constraints
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0.0];
@@ -105,5 +107,10 @@
     return headerView;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor greenColor];
+    cell.contentView.backgroundColor = [UIColor greenColor];
+}
 
 @end

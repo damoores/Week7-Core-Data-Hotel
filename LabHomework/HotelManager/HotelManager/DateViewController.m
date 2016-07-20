@@ -42,30 +42,35 @@
 {
     [self.navigationItem setTitle:@"Select Dates"];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"Book now!" style:UIBarButtonItemStylePlain target:self action:@selector(bookNowButtonSelected:)]];
+
 }
 
 - (void)setupDatePickers
 {
     self.startPicker =[[UIDatePicker alloc]init];
     self.startPicker.datePickerMode = UIDatePickerModeDate;
+    self.startPicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:86400];
     self.endPicker =[[UIDatePicker alloc]init];
     self.endPicker.datePickerMode = UIDatePickerModeDate;
+    self.endPicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:172800];
 
     self.startPicker.frame = CGRectMake(0.0, 124.0, CGRectGetWidth(self.view.frame), 160.0);
     self.endPicker.frame = CGRectMake(0.0, 364.0, CGRectGetWidth(self.view.frame), 160.0);
 
     [self.view addSubview:_startPicker];
     [self.view addSubview:_endPicker];
+    
+    [self.startPicker addTarget:self action:@selector(startDateChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)setupLabels
 {
     self.startPickerLabel = [[UILabel alloc]init];
-    self.startPickerLabel.text = @"Set arrival date:";
+    self.startPickerLabel.text = @"Set check-in date:";
     self.startPickerLabel.textAlignment = NSTextAlignmentCenter;
     self.startPickerLabel.frame = CGRectMake(0.0, 84.0, CGRectGetWidth(self.view.frame), 40.0);
     self.endPickerLabel = [[UILabel alloc]init];
-    self.endPickerLabel.text = @"Set departure date:";
+    self.endPickerLabel.text = @"Set check-out date:";
     self.endPickerLabel.textAlignment = NSTextAlignmentCenter;
     self.endPickerLabel.frame = CGRectMake(0.0, 324.0, CGRectGetWidth(self.view.frame), 40.0);
 
@@ -95,4 +100,10 @@
     [self.navigationController pushViewController:availabilityViewController animated:YES];
 }
 
+- (void)startDateChanged:(UIDatePicker *)sender
+{
+    NSDate *startDate = [self.startPicker date];
+    [self.endPicker setDate:[NSDate dateWithTimeInterval:86400 sinceDate:startDate] animated:YES];
+    
+}
 @end

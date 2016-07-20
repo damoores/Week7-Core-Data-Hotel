@@ -51,7 +51,7 @@
 - (void)loadView
 {
     [super loadView];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.barTintColor =[UIColor magentaColor];
 }
 
 - (void)setupTableView
@@ -62,6 +62,7 @@
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"hotelCell"];
+    self.tableView.backgroundColor = [UIColor greenColor];
     
     //setup TableView constraints
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0.0];
@@ -88,6 +89,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotelCell" forIndexPath:indexPath];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"hotelCell"];
+
     }
     
     Hotel *hotel = self.datasource[indexPath.row];
@@ -119,6 +121,12 @@
     RoomsViewController *roomsViewController = [[RoomsViewController alloc]init];
     roomsViewController.hotel = hotel;
     [self.navigationController pushViewController:roomsViewController animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor greenColor];
+    cell.contentView.backgroundColor = [UIColor greenColor];
 }
 
 @end

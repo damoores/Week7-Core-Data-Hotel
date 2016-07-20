@@ -29,7 +29,8 @@
 - (void)loadView
 {
     [super loadView];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.barTintColor = [UIColor magentaColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     [self setupCustomLayout];
 }
 
@@ -51,7 +52,7 @@
     [lookUpButton setTitle:@"My Reservations" forState:UIControlStateNormal];
     
     [browseButton setBackgroundColor:[UIColor greenColor]];
-    [bookButton setBackgroundColor:[UIColor redColor]];
+    [bookButton setBackgroundColor:[UIColor orangeColor]];
     [lookUpButton setBackgroundColor:[UIColor yellowColor]];
     
     [browseButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -91,7 +92,7 @@
     
     NSLayoutConstraint *lookUpButtonTop = [NSLayoutConstraint constraintWithItem:lookUpButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:bookButton attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
     
-    NSLayoutConstraint *lookUpButtonHeight = [NSLayoutConstraint constraintWithItem:lookUpButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:browseButton attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *lookUpButtonHeight = [NSLayoutConstraint constraintWithItem:lookUpButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:browseButton attribute:NSLayoutAttributeHeight multiplier:1.1 constant:0.0];
     
     // Activate Constraints
     browseButtonLeading.active = YES;
