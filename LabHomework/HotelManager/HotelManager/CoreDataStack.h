@@ -18,5 +18,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void)bootstrapApp;
++ (instancetype)shared;
 
 @end

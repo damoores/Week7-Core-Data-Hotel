@@ -16,6 +16,16 @@
 
 @implementation CoreDataStack
 
++ (instancetype)shared
+{
+    static CoreDataStack *shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [[[self class]alloc]init];
+    });
+    return shared;
+}
+
 
 - (void)bootstrapApp
 {

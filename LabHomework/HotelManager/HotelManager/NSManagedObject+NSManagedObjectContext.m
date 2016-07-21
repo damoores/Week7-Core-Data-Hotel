@@ -8,14 +8,13 @@
 
 #import "NSManagedObject+NSManagedObjectContext.h"
 #import "AppDelegate.h"
-
+#import "CoreDataStack.h"
 
 @implementation NSManagedObject (NSManagedObjectContext)
 
 + (NSManagedObjectContext *)managerContext
 {
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    return delegate.managedObjectContext;
+    return [[CoreDataStack shared]managedObjectContext];
 }
 
 @end
