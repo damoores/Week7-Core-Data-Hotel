@@ -12,6 +12,7 @@
 #import "Rooms.h"
 #import "Hotel.h"
 #import "NSManagedObject+NSManagedObjectContext.h"
+#import "Flurry.h"
 
 @interface LookupViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -32,6 +33,20 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"LookupView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"LookupView disappears"];
+}
+
 
 - (void)loadView
 {
@@ -87,7 +102,7 @@
     }
     Reservation *reservation = self.datasource[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Name: %@ %@, Hotel: %@", reservation.guest.firstName, reservation.guest.lastName, reservation.rooms.hotel.name];
-    
+    cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }
 

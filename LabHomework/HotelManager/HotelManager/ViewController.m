@@ -13,6 +13,7 @@
 #import "ComingSoonViewController.h"
 #import "InfoViewController.h"
 #import "LookupViewController.h"
+#import "Flurry.h"
 
 @interface ViewController ()
 
@@ -27,6 +28,19 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"HomeView appears"];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"HomeView disappears"];
 }
 
 - (void)loadView

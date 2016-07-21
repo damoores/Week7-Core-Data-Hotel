@@ -109,11 +109,24 @@
     
     // Create the coordinator and store
     
+    
+    //: Create options dictionary yes for lightweight, NO for manual
+    //add coredata mapping model, MappingModel1.0_1.1
+    // use $source.property as attribute mapping value expression on right of GUI
+    
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:[NSNumber numberWithBool: YES], NSInferMappingModelAutomaticallyOption: [NSNumber numberWithBool: YES], NSPersistentStoreUbiquitousContentNameKey: @"jwmHotelManager", NSPersistentStoreUbiquitousContentURLKey:@"logs"};
+                            
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HotelManager.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    
+    // change options from nil to options dict from above
+    // Delete +CoreDataProperties, then repopulate after selecting 1.1 MOM
+    // repopulate coredData subclasses in Entity folder, then delete NEW models
+    
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

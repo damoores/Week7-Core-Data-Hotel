@@ -11,6 +11,7 @@
 #import "RoomsViewController.h"
 #import "Hotel.h"
 #import "NSManagedObject+NSManagedObjectContext.h"
+#import "Flurry.h"
 
 @interface HotelsViewController () <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
@@ -32,6 +33,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"HotelsView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"HotelsView disappears"];
+}
+
 
 - (void)loadView
 {

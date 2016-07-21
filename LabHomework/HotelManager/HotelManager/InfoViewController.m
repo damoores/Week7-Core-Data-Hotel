@@ -7,6 +7,7 @@
 //
 
 #import "InfoViewController.h"
+#import "Flurry.h"
 
 @interface InfoViewController ()
 
@@ -23,6 +24,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"InfoView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"InfoView disappears"];
+}
+
 
 - (void)loadView
 {

@@ -8,6 +8,7 @@
 
 #import "DateViewController.h"
 #import "AvailabilityViewController.h"
+#import "Flurry.h"
 
 
 @interface DateViewController ()
@@ -31,6 +32,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"DateView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"DateView disappears"];
+}
+
 
 - (void)loadView
 {

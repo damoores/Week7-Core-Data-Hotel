@@ -18,9 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Guest : NSManagedObject
 
-// + (instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Rooms *)room
 
-+ (instancetype)guestWithName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email;
++ (instancetype)guestWithName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email phoneNumber:(NSString *)phoneNumber;
 
 @end
 

@@ -8,12 +8,14 @@
 
 #import "BookViewController.h"
 #import "NSManagedObject+NSManagedObjectContext.h"
+#import "Flurry.h"
 
 @interface BookViewController ()
 
 @property (strong, nonatomic)UITextField *firstNameField;
 @property (strong, nonatomic)UITextField *lastNameField;
 @property (strong, nonatomic)UITextField *emailField;
+@property (strong, nonatomic)UITextField *phoneNumberField;
 
 @end
 
@@ -31,6 +33,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"BookView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"BookView disappears"];
+}
+
 
 - (void)loadView
 {
@@ -76,13 +92,21 @@
     self.emailField.placeholder = @" email";
     self.emailField.layer.cornerRadius = 4.0;
     self.emailField.translatesAutoresizingMaskIntoConstraints = NO;
+    self.phoneNumberField = [[UITextField alloc]init];
+    self.phoneNumberField.placeholder = @" phone";
+    self.phoneNumberField.layer.cornerRadius = 4.0;
+    self.phoneNumberField.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addSubview:self.firstNameField];
     [self.view addSubview:self.lastNameField];
     [self.view addSubview:self.emailField];
+    [self.view addSubview:self.phoneNumberField];
+
     [self.firstNameField setBackgroundColor:[UIColor whiteColor]];
     [self.lastNameField setBackgroundColor:[UIColor whiteColor]];
     [self.emailField setBackgroundColor:[UIColor whiteColor]];
+    [self.phoneNumberField setBackgroundColor:[UIColor whiteColor]];
+
     
     //set constraints
     NSLayoutConstraint *leadingFirst = [NSLayoutConstraint constraintWithItem:self.firstNameField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
@@ -96,6 +120,11 @@
     NSLayoutConstraint *leadingEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
     NSLayoutConstraint *trailingEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
     NSLayoutConstraint *topEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.lastNameField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
+    
+    NSLayoutConstraint *leadingPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
+    NSLayoutConstraint *trailingPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
+    NSLayoutConstraint *topPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.emailField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
+
 
     leadingFirst.active = YES;
     trailingFirst.active = YES;
@@ -106,17 +135,19 @@
     leadingEmail.active = YES;
     trailingEmail.active = YES;
     topEmail.active = YES;
+    leadingPhone.active = YES;
+    trailingPhone.active = YES;
+    topPhone.active = YES;
     
     [self.firstNameField becomeFirstResponder];
 }
 
-//TODO:
 
 - (void)saveButtonSelected:(UIBarButtonItem *)sender
 {
     Reservation *reservation = [Reservation reservationWithStartDate:self.startDate endDate:self.endDate room:self.room];
     self.room.reservation = reservation;
-    reservation.guest = [Guest guestWithName:self.firstNameField.text lastName:self.lastNameField.text email:self.emailField.text];
+    reservation.guest = [Guest guestWithName:self.firstNameField.text lastName:self.lastNameField.text email:self.emailField.text phoneNumber:self.phoneNumberField.text];
     
     NSError *saveError;
     [[NSManagedObject managerContext] save:&saveError];

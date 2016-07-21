@@ -13,6 +13,8 @@
 #import "Hotel.h"
 #import "BookViewController.h"
 #import "Operations.h"
+#import "Flurry.h"
+
 
 @interface AvailabilityViewController ()
 
@@ -28,11 +30,14 @@
     [super viewDidLoad];
     [self loadView];
     [self setupTableView];
+    [Flurry logEvent:@"AvailabilityView launched"];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +50,6 @@
     [self.view setBackgroundColor:[UIColor greenColor]];
 }
 
-// TODO: availability datasource
 - (NSArray *)datasource
 {
     if (!_datasource) {
@@ -75,6 +79,7 @@
     leading.active = YES;
     top.active = YES;
     bottom.active = YES;
+    
 }
 
 #pragma mark -- UITableViewDatasource
@@ -130,6 +135,7 @@
     bookViewController.room = room;
     bookViewController.startDate = self.startDate;
     bookViewController.endDate = self.endDate;
+    [Flurry logEvent:@"AvailabilityView finished"];
     [self.navigationController pushViewController:bookViewController animated:YES];
 }
 

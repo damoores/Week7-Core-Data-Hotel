@@ -10,6 +10,7 @@
 #import "Rooms.h"
 #import "AppDelegate.h"
 #import "Hotel.h"
+#import "Flurry.h"
 
 @interface RoomsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,6 +29,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [Flurry logEvent:@"RoomsView appears"];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [Flurry logEvent:@"RoomsView disappears"];
+}
+
 
 - (void)loadView
 {

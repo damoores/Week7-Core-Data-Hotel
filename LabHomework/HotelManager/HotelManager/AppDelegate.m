@@ -13,6 +13,7 @@
 #import "Guest.h"
 #import "Reservation.h"
 #import "CoreDataStack.h"
+#import "Flurry.h"
 
 @interface AppDelegate ()
 
@@ -27,10 +28,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupRootViewController];
     [[CoreDataStack shared]bootstrapApp];
+    [Flurry startSession:@"RWZ56MXCNCZVRCBGHWYQ"];
+    
+    [Flurry logEvent:@"Application launched"];
     return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [Flurry logEvent:@"Application Terminated"];
     [[CoreDataStack shared] saveContext];
 }
 
