@@ -12,11 +12,13 @@
 #import "Rooms.h"
 #import "Hotel.h"
 #import "BookViewController.h"
+#import "Operations.h"
 
 @interface AvailabilityViewController ()
 
 @property (strong, nonatomic)UITableView *tableView;
 @property (strong, nonatomic)NSArray *datasource;
+
 
 @end
 
@@ -43,37 +45,12 @@
     [self.view setBackgroundColor:[UIColor greenColor]];
 }
 
+// TODO: availability datasource
 - (NSArray *)datasource
 {
     if (!_datasource) {
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
-        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate => %@", self.endDate, self.startDate];
-        NSError *fetchError;
-        NSArray *results = [delegate.managedObjectContext executeFetchRequest:request error:&fetchError];
-        NSMutableArray *unavailableRooms = [[NSMutableArray alloc]init];
-        if (!fetchError) {
-            for (Reservation *reservation in results) {
-                [unavailableRooms addObject:reservation.rooms];
-            }
-        } else {
-                NSLog(@"Error fetching reservations :%@",fetchError);
-            }
-        
-        NSFetchRequest *checkRequest = [NSFetchRequest fetchRequestWithEntityName:@"Rooms"];
-        checkRequest.predicate = [NSPredicate predicateWithFormat:@"NOT self IN%@", unavailableRooms];
-        NSArray *checkResults = [delegate.managedObjectContext executeFetchRequest:checkRequest error:&fetchError];
-        if (fetchError) {
-            NSLog(@"Error fetching rooms: %@", fetchError);
-        } else {
-            
-            _datasource = checkResults;
-            // sorting by room number via Sung
-            
-            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES];
-            _datasource = [_datasource sortedArrayUsingDescriptors:@[sort]];
-        }
+      _datasource = [Operations availableRooms:self.endDate startDate:self.startDate];
+    
     }
     return _datasource;
 }

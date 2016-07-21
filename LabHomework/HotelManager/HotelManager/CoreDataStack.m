@@ -1,50 +1,22 @@
 //
-//  AppDelegate.m
+//  CoreDataStack.m
 //  HotelManager
 //
-//  Created by Jeremy Moore on 7/18/16.
+//  Created by Jeremy Moore on 7/20/16.
 //  Copyright © 2016 Jeremy Moore. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CoreDataStack.h"
 #import "ViewController.h"
 #import "Hotel.h"
 #import "Rooms.h"
 #import "Guest.h"
 #import "Reservation.h"
-#import "CoreDataStack.h"
-
-@interface AppDelegate ()
-
-@property (strong, nonatomic) UINavigationController *navigationController;
-@property (strong, nonatomic) ViewController *viewController;
-
-@end
-
-@implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self setupRootViewController];
-    [self bootstrapApp];
-    return YES;
-}
+@implementation CoreDataStack
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-   
-    [self saveContext];
-}
 
-- (void)setupRootViewController
-{
-    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.viewController = [[ViewController alloc]init];
-    self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
-}
-
-//TODO:
 - (void)bootstrapApp
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
@@ -97,7 +69,6 @@
         }
     }
 }
-
 
 #pragma mark - Core Data stack
 
@@ -178,5 +149,7 @@
         }
     }
 }
+
+
 
 @end

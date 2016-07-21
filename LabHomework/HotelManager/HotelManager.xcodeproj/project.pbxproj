@@ -16,6 +16,8 @@
 		705227CC1D3F27D20002B79A /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227CB1D3F27D20002B79A /* ComingSoonViewController.m */; };
 		705227D31D3F2DC70002B79A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227D21D3F2DC70002B79A /* InfoViewController.m */; };
 		705227D81D4021200002B79A /* LookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227D71D4021200002B79A /* LookupViewController.m */; };
+		705227DB1D4030E20002B79A /* Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227DA1D4030E20002B79A /* Operations.m */; };
+		705227DE1D4056030002B79A /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 705227DD1D4056030002B79A /* CoreDataStack.m */; };
 		7098FE311D3D9AA7008AFD82 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2E1D3D9AA7008AFD82 /* hotel.png */; };
 		7098FE321D3D9AA7008AFD82 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2F1D3D9AA7008AFD82 /* hotels.json */; };
 		7098FE331D3D9AA7008AFD82 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE301D3D9AA7008AFD82 /* room.png */; };
@@ -54,6 +56,10 @@
 		705227D21D3F2DC70002B79A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		705227D61D4021200002B79A /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupViewController.h; sourceTree = "<group>"; };
 		705227D71D4021200002B79A /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupViewController.m; sourceTree = "<group>"; };
+		705227D91D4030E20002B79A /* Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operations.h; sourceTree = "<group>"; };
+		705227DA1D4030E20002B79A /* Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operations.m; sourceTree = "<group>"; };
+		705227DC1D4056030002B79A /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		705227DD1D4056030002B79A /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		7098FE2E1D3D9AA7008AFD82 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotel.png"; sourceTree = "<group>"; };
 		7098FE2F1D3D9AA7008AFD82 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotels.json"; sourceTree = "<group>"; };
 		7098FE301D3D9AA7008AFD82 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/room.png"; sourceTree = "<group>"; };
@@ -151,6 +157,10 @@
 			children = (
 				70B9D5AA1D3D831C00D7EB79 /* AppDelegate.h */,
 				70B9D5AB1D3D831C00D7EB79 /* AppDelegate.m */,
+				705227D91D4030E20002B79A /* Operations.h */,
+				705227DA1D4030E20002B79A /* Operations.m */,
+				705227DC1D4056030002B79A /* CoreDataStack.h */,
+				705227DD1D4056030002B79A /* CoreDataStack.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -158,6 +168,8 @@
 		70B9D5C21D3D83BF00D7EB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				705227A91D3ED3480002B79A /* AvailabilityViewController.h */,
+				705227AA1D3ED3480002B79A /* AvailabilityViewController.m */,
 				70B9D5AD1D3D831C00D7EB79 /* ViewController.h */,
 				70B9D5AE1D3D831C00D7EB79 /* ViewController.m */,
 				7098FE341D3D9B86008AFD82 /* HotelsViewController.h */,
@@ -166,8 +178,6 @@
 				7098FE381D3D9B93008AFD82 /* RoomsViewController.m */,
 				705227A61D3ECBA60002B79A /* DateViewController.h */,
 				705227A71D3ECBA60002B79A /* DateViewController.m */,
-				705227A91D3ED3480002B79A /* AvailabilityViewController.h */,
-				705227AA1D3ED3480002B79A /* AvailabilityViewController.m */,
 				705227C71D3EEFCA0002B79A /* BookViewController.h */,
 				705227C81D3EEFCA0002B79A /* BookViewController.m */,
 				705227CA1D3F27D20002B79A /* ComingSoonViewController.h */,
@@ -300,6 +310,8 @@
 				705227CC1D3F27D20002B79A /* ComingSoonViewController.m in Sources */,
 				70B9D5AF1D3D831C00D7EB79 /* ViewController.m in Sources */,
 				70B9D5AC1D3D831C00D7EB79 /* AppDelegate.m in Sources */,
+				705227DB1D4030E20002B79A /* Operations.m in Sources */,
+				705227DE1D4056030002B79A /* CoreDataStack.m in Sources */,
 				705227C61D3EE8BF0002B79A /* Guest.m in Sources */,
 				705227AE1D3EE4570002B79A /* NSManagedObject+NSManagedObjectContext.m in Sources */,
 				705227A81D3ECBA60002B79A /* DateViewController.m in Sources */,

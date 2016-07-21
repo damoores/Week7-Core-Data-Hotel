@@ -12,6 +12,7 @@
 #import "DateViewController.h"
 #import "ComingSoonViewController.h"
 #import "InfoViewController.h"
+#import "LookupViewController.h"
 
 @interface ViewController ()
 
@@ -131,7 +132,7 @@
 
 - (void)lookUpButtonSelected:(UIButton *)sender
 {
-    [self.navigationController pushViewController:[[ComingSoonViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:[[LookupViewController alloc]init] animated:YES];
 }
 
 - (void)infoButtonSelected:(UIBarButtonItem *)sender
