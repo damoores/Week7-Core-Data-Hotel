@@ -100,7 +100,7 @@
     NSString *roomNumber = [room.number stringValue];
     NSString *roomBeds = [room.beds stringValue];
     NSString *roomRate = [room.rate stringValue];
-    cell.textLabel.text = [NSString stringWithFormat:@"Room %@: %@ Beds, $%@ per night", roomNumber, roomBeds, roomRate];
+    cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Room %@: %@ Beds, $%@ per night",nil),roomNumber, roomBeds, roomRate];
     return cell;
 }
 

@@ -101,7 +101,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"roomCell"];
     }
     Reservation *reservation = self.datasource[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Name: %@ %@, Hotel: %@", reservation.guest.firstName, reservation.guest.lastName, reservation.rooms.hotel.name];
+    cell.textLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Name: %@ %@, Hotel: %@",nil), reservation.guest.firstName, reservation.guest.lastName, reservation.rooms.hotel.name];
     cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }

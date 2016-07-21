@@ -29,6 +29,7 @@
 		7052280D1D41648E0002B79A /* Hotel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 705228071D41648E0002B79A /* Hotel+CoreDataProperties.m */; };
 		7052280E1D41648E0002B79A /* Rooms+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 705228091D41648E0002B79A /* Rooms+CoreDataProperties.m */; };
 		705228101D41670D0002B79A /* HotelManager1.0_1.1.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7052280F1D41670D0002B79A /* HotelManager1.0_1.1.xcmappingmodel */; };
+		7084E9E51D419466003FEBDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7084E9E71D419466003FEBDB /* Localizable.strings */; };
 		7098FE311D3D9AA7008AFD82 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2E1D3D9AA7008AFD82 /* hotel.png */; };
 		7098FE321D3D9AA7008AFD82 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE2F1D3D9AA7008AFD82 /* hotels.json */; };
 		7098FE331D3D9AA7008AFD82 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098FE301D3D9AA7008AFD82 /* room.png */; };
@@ -99,6 +100,10 @@
 		705228081D41648E0002B79A /* Rooms+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rooms+CoreDataProperties.h"; sourceTree = "<group>"; };
 		705228091D41648E0002B79A /* Rooms+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rooms+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7052280F1D41670D0002B79A /* HotelManager1.0_1.1.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = HotelManager1.0_1.1.xcmappingmodel; sourceTree = "<group>"; };
+		705228131D4190C50002B79A /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7084E9E61D419466003FEBDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7084E9E81D419478003FEBDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7084E9E91D419479003FEBDB /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7098FE2E1D3D9AA7008AFD82 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotel.png"; sourceTree = "<group>"; };
 		7098FE2F1D3D9AA7008AFD82 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = "../../../class-1/lecture-code/Code + Assets/Assets/hotels.json"; sourceTree = "<group>"; };
 		7098FE301D3D9AA7008AFD82 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = "../../../class-1/lecture-code/Code + Assets/Assets/room.png"; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 				7098FE2F1D3D9AA7008AFD82 /* hotels.json */,
 				7098FE301D3D9AA7008AFD82 /* room.png */,
 				70B9D5A81D3D831C00D7EB79 /* main.m */,
+				7084E9E71D419466003FEBDB /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-MX",
 			);
 			mainGroup = 70B9D59B1D3D831C00D7EB79;
 			productRefGroup = 70B9D5A51D3D831C00D7EB79 /* Products */;
@@ -407,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B9D5BA1D3D831C00D7EB79 /* LaunchScreen.storyboard in Resources */,
+				7084E9E51D419466003FEBDB /* Localizable.strings in Resources */,
 				7098FE331D3D9AA7008AFD82 /* room.png in Resources */,
 				7098FE311D3D9AA7008AFD82 /* hotel.png in Resources */,
 				7098FE321D3D9AA7008AFD82 /* hotels.json in Resources */,
@@ -469,10 +477,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7084E9E71D419466003FEBDB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7084E9E61D419466003FEBDB /* Base */,
+				7084E9E81D419478003FEBDB /* en */,
+				7084E9E91D419479003FEBDB /* es-MX */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		70B9D5B81D3D831C00D7EB79 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				70B9D5B91D3D831C00D7EB79 /* Base */,
+				705228131D4190C50002B79A /* es-MX */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -632,6 +651,7 @@
 				705227EC1D4064720002B79A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70B9D59F1D3D831C00D7EB79 /* Build configuration list for PBXProject "HotelManager" */ = {
 			isa = XCConfigurationList;

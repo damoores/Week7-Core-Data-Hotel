@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  HotelManager
+
+  Created by Jeremy Moore on 7/21/16.
+  Copyright © 2016 Jeremy Moore. All rights reserved.
+*/
+
+/* No comment provided by engineer. */
+"Name: %@ %@, Hotel: %@" = "Name: %1$@ %2$@, Hotel: %3$@";
+
+/* No comment provided by engineer. */
+"Reservation at %@, Room: %@, From: %@ - To%@" = "Reservation at %1$@, Room: %2$@, From: %3$@ - To%4$@";
+
+/* No comment provided by engineer. */
+"Room %@: %@ Beds, $%@ per night" = "Room %1$@: %2$@ Beds, $%3$@ per night";
+

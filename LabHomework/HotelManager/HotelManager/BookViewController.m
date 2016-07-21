@@ -66,7 +66,7 @@
     messageLabel.numberOfLines = 0;
     messageLabel.textAlignment = NSTextAlignmentCenter;
     messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    messageLabel.text = [NSString stringWithFormat:@"Reservation at %@, Room: %@, From: %@ - To%@",self.room.hotel.name, self.room.number.stringValue, [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle], [NSDateFormatter localizedStringFromDate:self.endDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle]];
+    messageLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Reservation at %@, Room: %@, From: %@ - To%@",nil),self.room.hotel.name, self.room.number.stringValue, [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle], [NSDateFormatter localizedStringFromDate:self.endDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle]];
     [self.view addSubview:messageLabel];
     
     //set constraints
