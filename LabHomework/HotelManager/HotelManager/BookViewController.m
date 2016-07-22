@@ -81,19 +81,19 @@
 - (void)setupTextFields
 {
     self.firstNameField = [[UITextField alloc]init];
-    self.firstNameField.placeholder = @" First Name";
+    self.firstNameField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"First Name", nil)] ;
     self.firstNameField.layer.cornerRadius = 4.0;
     self.firstNameField.translatesAutoresizingMaskIntoConstraints = NO;
     self.lastNameField = [[UITextField alloc]init];
-    self.lastNameField.placeholder = @" Last Name";
+    self.lastNameField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Last Name", nil)] ;
     self.lastNameField.layer.cornerRadius = 4.0;
     self.lastNameField.translatesAutoresizingMaskIntoConstraints = NO;
     self.emailField = [[UITextField alloc]init];
-    self.emailField.placeholder = @" email";
+    self.emailField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Email", nil)] ;
     self.emailField.layer.cornerRadius = 4.0;
     self.emailField.translatesAutoresizingMaskIntoConstraints = NO;
     self.phoneNumberField = [[UITextField alloc]init];
-    self.phoneNumberField.placeholder = @" phone";
+    self.phoneNumberField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Phone Number", nil)] ;
     self.phoneNumberField.layer.cornerRadius = 4.0;
     self.phoneNumberField.translatesAutoresizingMaskIntoConstraints = NO;
     

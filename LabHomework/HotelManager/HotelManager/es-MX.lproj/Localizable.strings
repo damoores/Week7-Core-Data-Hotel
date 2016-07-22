@@ -7,7 +7,31 @@
 */
 
 /* No comment provided by engineer. */
+"Book Now!" = "¡Reservar ahora!";
+
+/* No comment provided by engineer. */
+"Browse Hotels" = "Busque Hoteles";
+
+/* No comment provided by engineer. */
+"Email" = "Email";
+
+/* No comment provided by engineer. */
+"First Name" = "Nombre de pila";
+
+/* No comment provided by engineer. */
+"H & M Properties" = "H & M Propiedades";
+
+/* No comment provided by engineer. */
+"Last Name" = "Apellido";
+
+/* No comment provided by engineer. */
+"My Reservations" = "Mis Reservas";
+
+/* No comment provided by engineer. */
 "Name: %@ %@, Hotel: %@" = "Nombre: %1$@ %2$@, Hotel: %3$@";
+
+/* No comment provided by engineer. */
+"Phone Number" = "Número de teléfono";
 
 /* No comment provided by engineer. */
 "Reservation at %@, Room: %@, From: %@ - To%@" = "Reserva en %1$@, Habitación: %2$@, De: %3$@ - A:%4$@";
@@ -15,3 +39,14 @@
 /* No comment provided by engineer. */
 "Room %@: %@ Beds, $%@ per night" = "Habitación %1$@: %2$@ Camas, $%3$@por noche";
 
+/* No comment provided by engineer. */
+"Search" = "Buscar";
+
+/* No comment provided by engineer. */
+"Select Dates" = "Fechas BuscarSelect";
+
+/* No comment provided by engineer. */
+"Set Check-in Date" = "Establecer Fecha de entrada";
+
+/* No comment provided by engineer. */
+"Set Check-out Date" = "Establecer Fecha de salida";

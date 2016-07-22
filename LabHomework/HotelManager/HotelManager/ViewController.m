@@ -53,7 +53,8 @@
 
 - (void)setupViewController
 {
-    [self.navigationItem setTitle:@"H & M Properties"];
+    [self.navigationItem setTitle:[NSString stringWithFormat:NSLocalizedString(@"H & M Properties", nil)]];
+     
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@" ⚒ " style:UIBarButtonItemStylePlain target:self action:@selector(infoButtonSelected:)]];
 }
 
@@ -65,9 +66,9 @@
     UIButton *bookButton = [[UIButton alloc]init];
     UIButton *lookUpButton = [[UIButton alloc]init];
 
-    [browseButton setTitle:@"Browse Hotels" forState:UIControlStateNormal];
-    [bookButton setTitle:@"Book Now!" forState:UIControlStateNormal];
-    [lookUpButton setTitle:@"My Reservations" forState:UIControlStateNormal];
+    [browseButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Browse Hotels", nil)] forState:UIControlStateNormal];
+    [bookButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Book Now!", nil)]  forState:UIControlStateNormal];
+    [lookUpButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"My Reservations", nil)]  forState:UIControlStateNormal];
     
     [browseButton setBackgroundColor:[UIColor greenColor]];
     [bookButton setBackgroundColor:[UIColor orangeColor]];

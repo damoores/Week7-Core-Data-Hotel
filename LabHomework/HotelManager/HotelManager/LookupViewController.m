@@ -52,7 +52,7 @@
 {
     [super loadView];
     [self setupTableView];
-    [self setTitle:@"Search"];
+    [self setTitle:[NSString stringWithFormat:NSLocalizedString(@"Search", nil)] ];
     self.view.backgroundColor = [UIColor yellowColor];
     
 }
