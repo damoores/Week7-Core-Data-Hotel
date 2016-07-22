@@ -177,14 +177,27 @@
 			children = (
 				705228001D41648E0002B79A /* Guest+CoreDataProperties.h */,
 				705228011D41648E0002B79A /* Guest+CoreDataProperties.m */,
-				705228041D41648E0002B79A /* Reservation+CoreDataProperties.h */,
-				705228051D41648E0002B79A /* Reservation+CoreDataProperties.m */,
 				705228061D41648E0002B79A /* Hotel+CoreDataProperties.h */,
 				705228071D41648E0002B79A /* Hotel+CoreDataProperties.m */,
+				705228041D41648E0002B79A /* Reservation+CoreDataProperties.h */,
+				705228051D41648E0002B79A /* Reservation+CoreDataProperties.m */,
 				705228081D41648E0002B79A /* Rooms+CoreDataProperties.h */,
 				705228091D41648E0002B79A /* Rooms+CoreDataProperties.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		7076A3741D42CBCA00D52CED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				705227ED1D411F4C0002B79A /* ConstraintHelper.h */,
+				705227EE1D411F4C0002B79A /* ConstraintHelper.m */,
+				705227DC1D4056030002B79A /* CoreDataStack.h */,
+				705227DD1D4056030002B79A /* CoreDataStack.m */,
+				705227D91D4030E20002B79A /* Operations.h */,
+				705227DA1D4030E20002B79A /* Operations.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		7098FE3A1D3D9DAE008AFD82 /* Additions */ = {
@@ -227,6 +240,7 @@
 				70B9D5C21D3D83BF00D7EB79 /* Controller */,
 				7098FE3A1D3D9DAE008AFD82 /* Additions */,
 				70B9D5C31D3D83C800D7EB79 /* Assets */,
+				7076A3741D42CBCA00D52CED /* Utilities */,
 				70B9D5A71D3D831C00D7EB79 /* Supporting Files */,
 			);
 			path = HotelManager;
@@ -249,12 +263,6 @@
 			children = (
 				70B9D5AA1D3D831C00D7EB79 /* AppDelegate.h */,
 				70B9D5AB1D3D831C00D7EB79 /* AppDelegate.m */,
-				705227D91D4030E20002B79A /* Operations.h */,
-				705227DA1D4030E20002B79A /* Operations.m */,
-				705227DC1D4056030002B79A /* CoreDataStack.h */,
-				705227DD1D4056030002B79A /* CoreDataStack.m */,
-				705227ED1D411F4C0002B79A /* ConstraintHelper.h */,
-				705227EE1D411F4C0002B79A /* ConstraintHelper.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -264,22 +272,22 @@
 			children = (
 				705227A91D3ED3480002B79A /* AvailabilityViewController.h */,
 				705227AA1D3ED3480002B79A /* AvailabilityViewController.m */,
-				70B9D5AD1D3D831C00D7EB79 /* ViewController.h */,
-				70B9D5AE1D3D831C00D7EB79 /* ViewController.m */,
-				7098FE341D3D9B86008AFD82 /* HotelsViewController.h */,
-				7098FE351D3D9B86008AFD82 /* HotelsViewController.m */,
-				7098FE371D3D9B93008AFD82 /* RoomsViewController.h */,
-				7098FE381D3D9B93008AFD82 /* RoomsViewController.m */,
-				705227A61D3ECBA60002B79A /* DateViewController.h */,
-				705227A71D3ECBA60002B79A /* DateViewController.m */,
 				705227C71D3EEFCA0002B79A /* BookViewController.h */,
 				705227C81D3EEFCA0002B79A /* BookViewController.m */,
 				705227CA1D3F27D20002B79A /* ComingSoonViewController.h */,
 				705227CB1D3F27D20002B79A /* ComingSoonViewController.m */,
+				705227A61D3ECBA60002B79A /* DateViewController.h */,
+				705227A71D3ECBA60002B79A /* DateViewController.m */,
+				7098FE341D3D9B86008AFD82 /* HotelsViewController.h */,
+				7098FE351D3D9B86008AFD82 /* HotelsViewController.m */,
 				705227D11D3F2DC70002B79A /* InfoViewController.h */,
 				705227D21D3F2DC70002B79A /* InfoViewController.m */,
 				705227D61D4021200002B79A /* LookupViewController.h */,
 				705227D71D4021200002B79A /* LookupViewController.m */,
+				7098FE371D3D9B93008AFD82 /* RoomsViewController.h */,
+				7098FE381D3D9B93008AFD82 /* RoomsViewController.m */,
+				70B9D5AD1D3D831C00D7EB79 /* ViewController.h */,
+				70B9D5AE1D3D831C00D7EB79 /* ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -305,10 +313,10 @@
 			isa = PBXGroup;
 			children = (
 				705227FF1D41643C0002B79A /* Entities */,
-				7098FE441D3DD6AE008AFD82 /* Hotel.h */,
-				7098FE451D3DD6AE008AFD82 /* Hotel.m */,
 				705227C31D3EE8BF0002B79A /* Guest.h */,
 				705227C41D3EE8BF0002B79A /* Guest.m */,
+				7098FE441D3DD6AE008AFD82 /* Hotel.h */,
+				7098FE451D3DD6AE008AFD82 /* Hotel.m */,
 				7098FE481D3DD6AE008AFD82 /* Reservation.h */,
 				7098FE491D3DD6AE008AFD82 /* Reservation.m */,
 				7098FE4C1D3DD6AE008AFD82 /* Rooms.h */,
