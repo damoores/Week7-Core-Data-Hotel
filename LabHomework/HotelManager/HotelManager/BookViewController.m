@@ -9,6 +9,7 @@
 #import "BookViewController.h"
 #import "NSManagedObject+NSManagedObjectContext.h"
 #import "Flurry.h"
+#import "ConstraintHelper.h"
 
 @interface BookViewController ()
 
@@ -62,84 +63,41 @@
 
 - (void)setupMessageLabel
 {
-    UILabel *messageLabel = [[UILabel alloc]init];
-    messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    messageLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Reservation at %@, Room: %@, From: %@ - To%@",nil),self.room.hotel.name, self.room.number.stringValue, [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle], [NSDateFormatter localizedStringFromDate:self.endDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle]];
-    [self.view addSubview:messageLabel];
     
+    UILabel *messageLabel = [[UILabel alloc]init];
+    [ConstraintHelper setupLabel:messageLabel superView:self.view text:[NSString stringWithFormat:NSLocalizedString(@"Reservation at %@, Room: %@, From: %@ - To%@",nil),self.room.hotel.name, self.room.number.stringValue, [NSDateFormatter localizedStringFromDate:self.startDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle], [NSDateFormatter localizedStringFromDate:self.endDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle]]];
+
     //set constraints
-    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:messageLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0];
-    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:messageLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0];
-    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:messageLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
-    leading.active = YES;
-    trailing.active = YES;
-    centerY.active = YES;
+    [ConstraintHelper centerY:messageLabel superView:self.view];
 }
 
 - (void)setupTextFields
 {
-    self.firstNameField = [[UITextField alloc]init];
-    self.firstNameField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"First Name", nil)] ;
-    self.firstNameField.layer.cornerRadius = 4.0;
-    self.firstNameField.translatesAutoresizingMaskIntoConstraints = NO;
-    self.lastNameField = [[UITextField alloc]init];
-    self.lastNameField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Last Name", nil)] ;
-    self.lastNameField.layer.cornerRadius = 4.0;
-    self.lastNameField.translatesAutoresizingMaskIntoConstraints = NO;
-    self.emailField = [[UITextField alloc]init];
-    self.emailField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Email", nil)] ;
-    self.emailField.layer.cornerRadius = 4.0;
-    self.emailField.translatesAutoresizingMaskIntoConstraints = NO;
-    self.phoneNumberField = [[UITextField alloc]init];
-    self.phoneNumberField.placeholder = [NSString stringWithFormat:NSLocalizedString(@"Phone Number", nil)] ;
-    self.phoneNumberField.layer.cornerRadius = 4.0;
-    self.phoneNumberField.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addSubview:self.firstNameField];
-    [self.view addSubview:self.lastNameField];
-    [self.view addSubview:self.emailField];
-    [self.view addSubview:self.phoneNumberField];
-
-    [self.firstNameField setBackgroundColor:[UIColor whiteColor]];
-    [self.lastNameField setBackgroundColor:[UIColor whiteColor]];
-    [self.emailField setBackgroundColor:[UIColor whiteColor]];
-    [self.phoneNumberField setBackgroundColor:[UIColor whiteColor]];
-
+    UITextField *firstNameField = [[UITextField alloc]init];
+    [ConstraintHelper setupUITextField:firstNameField superView:self.view name:@"First Name"];
+    UITextField *lastNameField = [[UITextField alloc]init];
+    [ConstraintHelper setupUITextField:lastNameField superView:self.view name:@"LastName"];
+    UITextField *emailField = [[UITextField alloc]init];
+    [ConstraintHelper setupUITextField:emailField superView:self.view name:@"Email"];
+    UITextField *phoneNumberField = [[UITextField alloc]init];
+    [ConstraintHelper setupUITextField:phoneNumberField superView:self.view name:@"Phone Number"];
     
-    //set constraints
-    NSLayoutConstraint *leadingFirst = [NSLayoutConstraint constraintWithItem:self.firstNameField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
-    NSLayoutConstraint *trailingFirst = [NSLayoutConstraint constraintWithItem:self.firstNameField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
-    NSLayoutConstraint *topFirst = [NSLayoutConstraint constraintWithItem:self.firstNameField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:104.0];
     
-    NSLayoutConstraint *leadingLast = [NSLayoutConstraint constraintWithItem:self.lastNameField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
-    NSLayoutConstraint *trailingLast = [NSLayoutConstraint constraintWithItem:self.lastNameField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
-    NSLayoutConstraint *topLast = [NSLayoutConstraint constraintWithItem:self.lastNameField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.firstNameField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
-
-    NSLayoutConstraint *leadingEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
-    NSLayoutConstraint *trailingEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
-    NSLayoutConstraint *topEmail = [NSLayoutConstraint constraintWithItem:self.emailField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.lastNameField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
+    //set constraints TODO:
     
-    NSLayoutConstraint *leadingPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:40.0];
-    NSLayoutConstraint *trailingPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-40.0];
-    NSLayoutConstraint *topPhone = [NSLayoutConstraint constraintWithItem:self.phoneNumberField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.emailField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
-
-
-    leadingFirst.active = YES;
-    trailingFirst.active = YES;
-    topFirst.active = YES;
-    leadingLast.active = YES;
-    trailingLast.active = YES;
-    topLast.active = YES;
-    leadingEmail.active = YES;
-    trailingEmail.active = YES;
-    topEmail.active = YES;
-    leadingPhone.active = YES;
-    trailingPhone.active = YES;
-    topPhone.active = YES;
+    for (UIView *view in self.view.subviews)
+    {
+        [ConstraintHelper setLeading:view superView:self.view multiplier:@1.0 constant:@40.0];
+        [ConstraintHelper setTrailing:view superView:self.view multiplier:@1.0 constant:@-40.0];
+    }
     
-    [self.firstNameField becomeFirstResponder];
+    [ConstraintHelper setTopToTop:firstNameField superView:self.view multiplier:@1.0 constant:@104.0];
+    [ConstraintHelper setTopToBottom:lastNameField superView:firstNameField multiplier:@1.0 constant:@20.0];
+    [ConstraintHelper setTopToBottom:emailField superView:lastNameField multiplier:@1.0 constant:@20.0];
+    [ConstraintHelper setTopToBottom:phoneNumberField superView:emailField multiplier:@1.0 constant:@20.0];
+    
+    [firstNameField becomeFirstResponder];
 }
 
 

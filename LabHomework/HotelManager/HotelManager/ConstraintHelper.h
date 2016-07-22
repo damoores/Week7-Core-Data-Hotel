@@ -10,4 +10,13 @@
 
 @interface ConstraintHelper : NSLayoutConstraint
 
++ (void)setFullScreen:(UIView *)subView superView:(UIView *)superView;
++ (void)setLeading:(UIView *)subView superView:(UIView *)superView multiplier:(NSNumber *)multiplier constant:(NSNumber *)constant;
++ (void)setTrailing:(UIView *)subView superView:(UIView *)superView multiplier:(NSNumber *)multiplier constant:(NSNumber *)constant;
++ (void)setTopToTop:(UIView *)subView superView:(UIView *)superView multiplier:(NSNumber *)multiplier constant:(NSNumber *)constant;
++ (void)setTopToBottom:(UIView *)subView superView:(UIView *)superView multiplier:(NSNumber *)multiplier constant:(NSNumber *)constant;
++ (void)setupUITextField:(UITextField *)textField superView:(UIView *)superView name:(NSString *)name;
++ (void)setupLabel:(UILabel *)label superView:(UIView *)superView text:(NSString *)text;
++ (void)centerY:(UIView *)subview superView:(UIView *)superView;
+
 @end

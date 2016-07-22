@@ -8,6 +8,7 @@
 
 #import "InfoViewController.h"
 #import "Flurry.h"
+#import "ConstraintHelper.h"
 
 @interface InfoViewController ()
 
@@ -53,7 +54,7 @@
     self.view.backgroundColor = [UIColor magentaColor];
     
     self.infoLabel = [[UITextView alloc]init];
-    self.infoLabel.text = @"C&H Properties is a wholly owned subsidary of Skynet. All Rights Reserved.";
+    self.infoLabel.text = [NSString stringWithFormat:NSLocalizedString(@"C&H Properties is a wholly owned subsidary of Skynet. All Rights Reserved.",nil)];
     self.infoLabel.textAlignment = NSTextAlignmentCenter;
     [self.infoLabel setFont:[UIFont boldSystemFontOfSize:16.0]];
     [self.infoLabel setBackgroundColor:[UIColor clearColor]];
